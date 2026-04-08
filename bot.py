@@ -4,7 +4,7 @@ import time
 from flask import Flask, request
 from agent import CustomerCareAgent, PRODUCT_LIST, ABOUT_TEXT, GREETINGS, model
 
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TOKEN = os.getenv("TELEGRAM_BOT_ACCESS_KEY")
 
 bot = telebot.TeleBot(TOKEN)
 app = Flask(__name__)
