@@ -1,10 +1,9 @@
 import os
-from bot import Bot
 from dotenv import load_dotenv
+from bot import app  # import Flask app from bot.py
 
 load_dotenv()
 
-TOKEN = os.getenv("TELEGRAM_BOT_ACCESS_KEY")
-
-bot = Bot(TOKEN)
-bot.run()
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
